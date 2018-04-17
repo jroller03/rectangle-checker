@@ -1,3 +1,5 @@
+
+
 namespace RectangleChecker.Models
 {
   public class Rectangle

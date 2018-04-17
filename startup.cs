@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+
 namespace RectangleChecker
 {
     public class Startup
@@ -25,6 +26,7 @@ namespace RectangleChecker
 
         public void Configure(IApplicationBuilder app)
         {
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -33,7 +35,7 @@ namespace RectangleChecker
             });
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Check your Rectangle Here");
+                await context.Response.WriteAsync("Error 404 Not found");
             });
         }
     }
