@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 
-namespace RectangleChecker
+namespace RectanglesChecker
 {
     public class Startup
     {
@@ -26,7 +26,7 @@ namespace RectangleChecker
 
         public void Configure(IApplicationBuilder app)
         {
-
+            app.UseDeveloperExceptionPage();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

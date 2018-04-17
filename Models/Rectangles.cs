@@ -1,13 +1,13 @@
 
 
-namespace RectangleChecker.Models
+namespace RectanglesChecker.Models
 {
-  public class Rectangle
+  public class Rectangles
   {
     private int _length;
     private int _width;
 
-    public Rectangle(int sideLength, int sideWidth)
+    public Rectangles(int sideLength, int sideWidth)
     {
       _length = sideLength;
       _width = sideWidth;

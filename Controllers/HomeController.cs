@@ -1,9 +1,9 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using RectangleChecker.Models;
+using RectanglesChecker.Models;
 
 
-namespace RectangleChecker.Controllers
+namespace RectanglesChecker.Controllers
 {
   public class HomeController : Controller
   {
