@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using RectanglesChecker.Models;
+using System.Collections.Generic;
 
 namespace RectanglesChecker.Controllers
 {
@@ -13,10 +14,17 @@ namespace RectanglesChecker.Controllers
     }
 
     [HttpGet("/rectangles/result")]
-    public ActionResult Result()
-    {
-      Rectangles myRectangle = new Rectangles(Int32.Parse(Request.Query["side-length"]), Int32.Parse(Request.Query["side-width"]));
-      return View("Result", myRectangle);
-    }
+        public ActionResult Result()
+        {
+            Dictionary<string, object> Shapes = new Dictionary<string, object>();
+            Rectangles myRectangle = new Rectangles(Int32.Parse(Request.Query["side-length"]), Int32.Parse(Request.Query["side-width"]));
+            Shapes.Add("ResultingRectangle", myRectangle);
+            if (myRectangle.IsSquare())
+            {
+                Cube myCube = new Cube(myRectangle);
+                Shapes.Add("ResultingCube", myCube);
+            }
+            return View("Result", Shapes);
+        }
   }
 }
